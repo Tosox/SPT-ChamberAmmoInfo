@@ -22,22 +22,20 @@ namespace Tosox.ChamberAmmoInfo.Patches
         {
             __state = false;
 
-            var weapon = __instance.Weapon_0;
-            if (weapon == null)
+            if (!__instance.Player_0.IsYourPlayer)
                 return;
 
+            var weapon = __instance.Weapon_0;
             __state = (weapon.MalfState.State == Weapon.EMalfunctionState.None);
         }
 
         [PatchPostfix]
         public static void PatchPostfix(Player.FirearmController.GClass2037 __instance, bool __result, bool __state)
         {
-            if (!__result || !__state)
+            if (!__instance.Player_0.IsYourPlayer || !__result || !__state)
                 return;
 
             var weapon = __instance.Weapon_0;
-            if (weapon == null)
-                return;
 
             string details;
             if (weapon.HasChambers)
