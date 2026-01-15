@@ -43,7 +43,7 @@ namespace Tosox.ChamberAmmoInfo.Helpers
             var cartridgeDetails = new List<string>();
             foreach (var chamber in chambers)
             {
-                var ammoItem = chamber?.ContainedItem as AmmoItemClass;
+                var ammoItem = chamber.ContainedItem as AmmoItemClass;
                 var ammoName = ammoItem?.Name.Localized(null);
                 cartridgeDetails.Add(string.IsNullOrEmpty(ammoName) ? "Empty".Localized(null) : ammoName);
             }
