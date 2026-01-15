@@ -7,7 +7,9 @@ namespace Tosox.ChamberAmmoInfo
     public class Plugin : BaseUnityPlugin
     {
         public const string PluginName = "Chamber Ammo Info";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "1.1.0";
+        public const string PluginAuthor = "Tosox";
+        public const string PluginSource = "https://github.com/Tosox/SPT-ChamberAmmoInfo";
 
         public void Awake()
         {
