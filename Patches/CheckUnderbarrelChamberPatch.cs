@@ -19,11 +19,11 @@ namespace Tosox.ChamberAmmoInfo.Patches
         [PatchPostfix]
         public static void PatchPostfix(Player.FirearmController.GClass2040 __instance, bool __result)
         {
-            if (!__result)
+            if (!__instance.Player_0.IsYourPlayer || !__result)
                 return;
 
             var launcher = __instance.LauncherItemClass;
-            var details = AmmoDetailsHelper.JoinChambers(launcher?.Chambers);
+            var details = AmmoDetailsHelper.JoinChambers(launcher.Chambers);
 
             AmmoDetailsHelper.Show(details);
         }
